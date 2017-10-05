@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta v-model="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-material-design/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-material-design/css/ripples.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap-material-design/js/ripples.min.js"></script>
+    <script src="lib/bootstrap-material-design/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
+    <style>
+      .clickable { cursor: pointer; }
+      .table > tbody > tr > td {
+       vertical-align: middle;
+      }
+      .btn.btn-xs {
+       margin: 2px 1px;
+       padding: 2px 15px;
+      }
+      .head-space {
+       margin-left: 0.5em;
+      }
+      .dialog-form {
+       margin-left: 4em;
+       margin-right: 4em;
+      }
+      .with-line-feed {
+       white-space: pre-wrap;
+      }
+    </style>
+    <title>Amazon IP Checker</title>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="container" id="ip">
+      <h1>Amazon IP Checker</h1>
+      <form @submit.prevent="" @submit="submit()">
+        <div class="form-group">
+          <label for="address">IP Address</label>
+          <input class="form-control" id="address" type="text" v-model="address">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <dl class="dl-horizontal" style="margin-top: 20px;">
+        <dt>Region</dt>
+        <dd v-text="region"></dd>
+        <dt>Service</dt>
+        <dd v-text="service"></dd>
+      </dl>
+    </div>
+  </body>
+</html>
